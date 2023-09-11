@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:trivialsergio/DropDownMenu.dart';
 
 class Homepage extends StatelessWidget {
   const Homepage({super.key});
@@ -29,18 +30,13 @@ class Homepage extends StatelessWidget {
         )),
         child: Center(
           child: Column(
-
             children: [
-
               Container(
                 padding: EdgeInsets.only(top: 150),
-
                 child: Text('TRIVIAL',style: TextStyle(fontSize: 80),),
               ),
-              ElevatedButton(onPressed: onPressed, child: Text('Jugar')),
-              DropdownMenu<String>(dropdownMenuEntries: dropdownMenuEntries)
-
-
+              DropDownMenuHome(items: ['easy', 'medium', 'hard']),
+              ElevatedButton(onPressed: () {}, child: Text('Jugar')),
             ],
           ),
         ),

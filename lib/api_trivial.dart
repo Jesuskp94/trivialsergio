@@ -11,7 +11,7 @@ Future<List<Pregunta>> getPreguntas() async {
   if(response.statusCode == 200){
     var jsonResponse = jsonDecode(response.body);
     List<Pregunta> preguntas = [];
-    for(var pregunta in jsonResponse){
+    for(var pregunta in jsonResponse['results']){
       preguntas.add(Pregunta.fromJson(pregunta));
     }
 

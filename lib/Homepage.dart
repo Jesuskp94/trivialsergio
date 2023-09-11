@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:trivialsergio/DropDownMenu.dart';
+import 'package:trivialsergio/Preguntastrivial.dart';
 
 class Homepage extends StatelessWidget {
   const Homepage({super.key});
@@ -50,7 +51,11 @@ class Homepage extends StatelessWidget {
               ),
               DropDownMenuHome(items: ['easy', 'medium', 'hard']),
               DropDownMenuHome(items: ['multiple chioce', 'True/False']),
-              ElevatedButton(onPressed: () {}, child: Text('Jugar')),
+              ElevatedButton(onPressed: (){
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context)=> PreguntasTrivial())
+                );}, child: Text('Jugar')),
             ],
           ),
         ),

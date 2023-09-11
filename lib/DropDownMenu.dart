@@ -22,6 +22,9 @@ class _DropDownMenuHomeState extends State<DropDownMenuHome> {
   @override
   Widget build(BuildContext context) {
     return DropdownMenu<String>(
+      inputDecorationTheme: InputDecorationTheme(
+        filled: true,
+      ),
       initialSelection: widget.items.first,
       onSelected: (String? value) {
         // This is called when the user selects an item.
@@ -29,6 +32,7 @@ class _DropDownMenuHomeState extends State<DropDownMenuHome> {
           dropdownValue = value!;
         });
       },
+      width: 200,
       dropdownMenuEntries: widget.items.map<DropdownMenuEntry<String>>((String value) {
         return DropdownMenuEntry<String>(value: value, label: value);
       }).toList(),

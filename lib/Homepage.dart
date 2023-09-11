@@ -7,6 +7,15 @@ class Homepage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        actions: [
+          GestureDetector(
+              child: const Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Icon(Icons.settings),
+          ))
+        ],
+      ),
       body: Container(
         width: double.infinity,
         height: double.infinity,
@@ -30,12 +39,17 @@ class Homepage extends StatelessWidget {
         )),
         child: Center(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               Container(
                 padding: EdgeInsets.only(top: 150),
-                child: Text('TRIVIAL',style: TextStyle(fontSize: 80),),
+                child: Text(
+                  'TRIVIAL',
+                  style: TextStyle(fontSize: 80),
+                ),
               ),
               DropDownMenuHome(items: ['easy', 'medium', 'hard']),
+              DropDownMenuHome(items: ['multiple chioce', 'True/False']),
               ElevatedButton(onPressed: () {}, child: Text('Jugar')),
             ],
           ),
